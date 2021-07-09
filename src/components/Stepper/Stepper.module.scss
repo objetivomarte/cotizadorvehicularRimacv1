@@ -1,0 +1,58 @@
+@import "../../assets/scss/variables";
+@import "../../assets/scss/mixins";
+
+$button-width: 24px;
+$description-width: 95px;
+.stepper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  .button {
+    border: 1px solid $primary;
+    height: $button-width;
+    width: $button-width;
+    border-radius: 50%;
+    position: relative;
+    &:before {
+      content: "";
+      position: absolute;
+      top: -1px;
+      right: 0;
+      background-image: url(./icon_chevrot_active.svg);
+      background-repeat: no-repeat;
+      background-position: center;
+      width: $button-width;
+      height: $button-width;
+      display: block;
+    }
+    &:disabled {
+      cursor: not-allowed;
+      border-color: $gray-light-3;
+      &:before {
+        background-image: url(./icon_chevrot.svg);
+      }
+    }
+  }
+  .description {
+    color: $gray-light-2;
+    font-size: 10px;
+    font-family: $secondary-family;
+    font-weight: $font-weight-base;
+    letter-spacing: 0.8px;
+    text-align: center;
+    width: $description-width
+  }
+  .slider {
+    height: 6px;
+    background-color: $gray-light-3;
+    width: calc(100% - #{$button-width + $description-width});
+    border-radius: 3px;
+    span {
+      height: 100%;
+      display: block;
+      background-color: $link;
+      border-radius: 3px;
+    }
+  }
+}

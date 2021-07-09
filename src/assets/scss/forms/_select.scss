@@ -1,0 +1,29 @@
+.form-input_select {
+  section {
+    height: $input-field-height;
+    position: relative;
+  }
+  select.form-input {
+    @include form-input--box;
+    -webkit-appearance: none;
+    background-image: url("./images/chevrot.svg");
+    background-repeat: no-repeat;
+    background-position: 90% center;
+    background-position-x: calc(100% - 16px);
+    background-size: 10px;
+  }
+  label { @include label--box }
+  &.has-label.has-focus {
+    label {
+      transform: scale(0.75) translateY(-18px)
+    }
+    select.form-input {
+      padding-top: 16px;
+    }
+  }
+  &.has-error {
+    select.form-input {
+      border-color: $error;
+    }
+  }
+}

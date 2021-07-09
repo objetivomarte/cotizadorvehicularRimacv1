@@ -1,0 +1,26 @@
+@import "../../../assets/scss/variables";
+
+.aside {
+  margin-top: $navbar-height-mobile;
+  background-image: url(../../../assets/images/client_male.svg);
+  background-position: center right;
+  background-repeat: no-repeat;
+  height: 210px;
+  @media (min-width: $breakpoint-desktop) {
+    margin: 0;
+    background-image: url(../../../assets/images/success_bg.svg);
+    height: 100vh;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    position: relative
+  }
+  .media {
+    display: none;
+    @media (min-width: $breakpoint-desktop) {
+      display: block;
+      position: absolute;
+      right: -20%;
+    }
+  }
+}

@@ -1,0 +1,31 @@
+@import '../../assets/scss/variables';
+
+.layout {
+  .aside {
+    background-color: $gray-light-4;
+    @media (min-width: $breakpoint-desktop) {
+      position: fixed;
+      top: 0;
+      bottom: 0;
+    }
+  }
+  .main {
+    @media (min-width: $breakpoint-desktop) {
+      position: absolute;
+      right: 0;
+      padding: 0;
+    }
+    .wrapper {
+      padding: ($spacing-xs * 10) $gap;
+      @media (min-width: $breakpoint-desktop) {
+        padding-left: 0;
+        padding-right: 0;
+        padding-top: $spacing-xs * 28;
+        margin: auto;
+      }
+    }
+  }
+  @media (max-width: $breakpoint-mobile) {
+    .aside, .main, .main .wrapper { width: 100% !important }
+  }
+}

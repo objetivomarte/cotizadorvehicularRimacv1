@@ -1,0 +1,26 @@
+$sizes: (
+  "display-1": 50px, 
+  "headline": 40px,
+  "title": 36px,
+  "subtitle-1": 28px,
+  "subtitle-2": 24px,
+  "subtitle-3": 20px,
+  "body-1": 14px,
+  "body-2": 12px,
+  "caption": 10px
+);
+
+@each $name, $font-size in $sizes {
+  .#{$name},
+  .#{$name}-desktop {
+    font-size: $font-size;
+    font-family: $secondary-family;
+    font-weight: $font-weight-base;
+    strong { font-weight: $font-weight-base }
+  }
+  .#{$name}-desktop {
+    @media (min-width: $breakpoint-desktop) {
+      font-size: $font-size !important
+    }
+  }
+}

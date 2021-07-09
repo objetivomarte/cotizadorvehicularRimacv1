@@ -1,0 +1,25 @@
+$primary-family: "Roboto", sans-serif;
+$secondary-family: "Lato", sans-serif;
+$font-weight-base: 400;
+$font-weight-bold: 700;
+
+$gray: #494f66;
+$gray-2: #676F8F;
+$gray-light-1: #d4d5e8;
+$gray-light-2: #A3ABCC;
+$gray-light-3: #E4E8F7;
+$gray-light-4: #F7F8FC;
+$primary: #EF3340;
+$error: #ff757a;
+$success: #43B748;
+$disabled: #EDEFF5;
+$link: #6F7DFF;
+
+$gap: 32px;
+$breakpoint-desktop: 1264px;
+$breakpoint-mobile: $breakpoint-desktop - 1px;
+$container: 1360px - ($gap * 2);
+$spacing-xs: 4px;
+
+$navbar-height: 64px;
+$navbar-height-mobile: 56px;

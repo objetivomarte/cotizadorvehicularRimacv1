@@ -1,0 +1,50 @@
+.primary--text { color: $primary }
+.success--text { color: $success }
+.error--text { color: $error }
+.link--text { color: $link }
+.gray-2--text { color: $gray-2 }
+.gray-light-3--text { color: $gray-light-3 }
+
+.gray-light-4 { background-color: $gray-light-4 }
+
+.justify-center { justify-content: center }
+.justify-space-between { justify-content: space-between }
+.justify-desktop-end { 
+  @media (min-width: $breakpoint-desktop) {
+    justify-content: flex-end 
+  }
+}
+
+.align-center { align-items: center }
+
+.text-right { text-align: right }
+.text-left { text-align: left }
+.text-justify { text-align: justify }
+.text-underline { text-decoration: underline }
+
+.text-uppercase { text-transform: uppercase }
+
+.d-none { display: none }
+.d-desktop-block {
+  @extend .d-none;
+  @media (min-width: $breakpoint-desktop) {
+    display: block !important
+  }
+}
+.d-mobile-none {
+  @media (max-width: $breakpoint-mobile) {
+    display: none !important
+  }
+}
+.d-desktop-none {
+  @media (min-width: $breakpoint-desktop) {
+    display: none !important
+  }
+}
+.d-flex { display: flex }
+.d-desktop-flex {
+  @media (min-width: $breakpoint-desktop) {
+    display: flex !important
+  }
+}
+

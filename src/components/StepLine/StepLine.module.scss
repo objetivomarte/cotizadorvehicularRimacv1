@@ -1,0 +1,48 @@
+@import "../../assets/scss/variables";
+
+ul.stepLine {
+  $box: 24px;
+  li {
+    position: relative;
+    padding-bottom: 48px;
+    display: flex;
+    align-items: center;
+    font-family: $secondary-family;
+    &:before {
+      content: '';
+      position: absolute;
+      top: $box;
+      left: $box / 2;
+      border-left: 1px dashed $gray-light-3;
+      width: 10px;
+      height: 100%;
+      z-index: -1;
+      box-sizing: border-box;
+    }
+    &:last-child:before { border: none }
+    span { 
+      display: block;
+      color: $gray-light-2; 
+    }
+    span.step {
+      width: $box;
+      height: $box;
+      line-height: $box;
+      border-radius: 50%;
+      border: 1px solid $gray-light-2;
+      text-align: center;
+      color: $gray-light-2;
+      font-size: 12px;
+      font-weight: $font-weight-bold;
+      margin-right: 16px;
+    }
+    &.active {
+      span { color: $gray }
+      span.step {
+        border: none;
+        background-color: $link;
+        color: white;
+      }
+    }
+  }
+}

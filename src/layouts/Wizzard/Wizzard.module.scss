@@ -1,0 +1,15 @@
+@import '../../assets/scss/variables';
+
+.stepper {
+  height: 47px;
+  display: flex;
+  justify-content: center;
+  border-bottom: 1px solid $gray-light-3;
+  margin-top: 16px;
+  margin-left: -$gap;
+  margin-right: -$gap;
+  padding: 0 $gap;
+  @media (min-width: $breakpoint-desktop) {
+    display: none;
+  }
+}

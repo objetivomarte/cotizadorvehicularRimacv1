@@ -1,0 +1,38 @@
+$input-field-height: 56px;
+@import './mixins';
+@import './select';
+@import './textfield';
+@import './checkbox';
+@import './radio';
+@import './switch';
+@import './number';
+
+.form-input_group {
+  select.form-input {
+    border-bottom-right-radius: 0 !important;
+    border-top-right-radius: 0 !important;
+  }
+  input.form-input {
+    margin-left: -1px;
+    border-bottom-left-radius: 0 !important;
+    border-top-left-radius: 0 !important;
+  }
+}
+
+.form-input_radio,
+.form-input_checkbox,
+.form-input_field,
+.form-input_select,
+.form-input_switch,
+.form-input_number {
+  margin-bottom: 16px;
+  .error-message {
+    color: $error;
+    font-size: 11px;
+    font-weight: $font-weight-base;
+    display: block;
+    margin-top: 8px;
+    margin-bottom: 10px;
+    font-family: $secondary-family;
+  }
+}

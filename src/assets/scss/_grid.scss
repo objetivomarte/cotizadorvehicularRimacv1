@@ -1,0 +1,40 @@
+$gap: 7px;
+$grids: (
+  "2": 16.66%,
+  "3": 25%,
+  "4": 33.33%,
+  "5": 41.66%,
+  "6": 50%,
+  "7": 58.33%,
+  "8": 66.66%,
+  "9": 75%,
+);
+
+.row {
+  margin-left: -$gap;
+  margin-right: -$gap;
+  display: flex;
+  flex-wrap: wrap;
+
+  @each $grid, $size in $grids {
+    > .col-#{$grid} { 
+      padding: 0 $gap;
+      width: $size;
+    }
+    > .col-desktop-#{$grid} {
+      padding: 0 $gap;
+      width: 100%;
+      @media (min-width: $breakpoint-desktop) {
+        width: $size;
+      }
+    }
+  }
+
+  &.no-gutters {
+    margin: 0;
+    @each $grid, $size in $grids {
+      > .col-#{$grid} { padding: 0 }
+      > .col-desktop-#{$grid} { padding: 0 }
+    }
+  }
+}

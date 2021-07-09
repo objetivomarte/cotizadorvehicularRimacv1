@@ -1,0 +1,32 @@
+.form-input_number {
+  height: $input-field-height;
+  section {
+    height: $input-field-height;
+    border: solid 1px $gray-light-1;
+    border-radius: 4px;
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+  }
+  button.controller {
+    font-size: 22px;
+    text-align: center;
+    width: $input-field-height;
+    height: $input-field-height;
+    line-height: $input-field-height;
+    &:not(:disabled) {
+      color: $link;
+    }
+    &:disabled {
+      color: $gray-light-1;
+    }
+    &:focus, &:active { @include focus-reset }
+  }
+  input.form-input {
+    @include form-input--box;
+    line-height: $input-field-height;
+    border: none;
+    padding: 0;
+    text-align: center;
+  }
+}

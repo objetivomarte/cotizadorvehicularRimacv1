@@ -1,0 +1,5 @@
+export { default as Home } from './Home'
+export { default as CarInfo } from './CarInfo'
+export { default as Coverage } from './Coverage'
+export { default as Success } from './Success'
+export { default as NotFound } from './NotFound'

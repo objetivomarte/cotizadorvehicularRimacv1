@@ -1,0 +1,56 @@
+@import '../../assets/scss/variables';
+
+.headline {
+  padding-top: ($gap * 1.3);
+  @media (max-width: $breakpoint-mobile) {
+    background-color: $gray-light-4;
+    padding-left: $gap;
+    padding-right: $gap;
+    margin-left: -$gap;
+    margin-right: -$gap;
+  }
+  @media (min-width: $breakpoint-desktop) {
+    padding-bottom: $gap * 1.5;
+    padding-top: 0;
+  }
+}
+
+.plate {
+  @media (max-width: $breakpoint-mobile) {
+    background-color: $gray-light-4;
+    margin-left: -$gap;
+    margin-right: -$gap;
+    padding: $gap $gap ($gap * 1.8);
+  }
+}
+
+ul.fakeTab {
+  display: flex;
+  justify-content: space-between;
+  list-style-type: none;
+  border-bottom: 1px solid $gray-light-3;
+  @media (max-width: $breakpoint-mobile) {
+    margin-left: -$gap;
+    margin-right: -$gap;
+  }
+  li {
+    font-size: 10px;
+    text-transform: uppercase;
+    font-family: $secondary-family;
+    text-align: center;
+    line-height: 16px;
+    font-weight: $font-weight-bold;
+    width: 33.33%;
+    letter-spacing: 0.8px;
+    padding: ($spacing-xs * 6) 14px;
+    @media (min-width: $breakpoint-desktop) {
+      padding-left: 20px;
+      padding-right: 20px;
+    }
+
+    &:first-child {
+      color: $primary;
+      border-bottom: 1px solid $primary;
+    }
+  }
+}

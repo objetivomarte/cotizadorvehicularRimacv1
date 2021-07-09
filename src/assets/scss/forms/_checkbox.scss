@@ -1,0 +1,42 @@
+.form-input_checkbox {
+  position: relative;
+  section { display: flex }
+  input { @include form-input--checkbox-radio }
+  input + section div {
+    display: inline-block;
+    cursor: pointer;
+    &:before {
+      content: "";
+      vertical-align: bottom;
+      color: transparent;
+      transition: .2s;
+      display: inline-block;
+      width: 20px;
+      height: 20px;
+      border: 1px solid $gray-light-1;
+      border-radius: 4px;
+      margin-right: 10px;
+    }
+  }
+  input:checked + section div:before {
+    content: "";
+    background-color: $success;
+    border-color: $success;
+    background-size: 70%;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-image: url("./images/ic_check.svg");
+  }
+  &.has-error {
+    input + section div:before {
+      border-color: $error;
+    }
+  }
+  label {
+    font-size: 12px;
+    line-height: 20px;
+    a {
+      color: $gray-2
+    }
+  }
+}

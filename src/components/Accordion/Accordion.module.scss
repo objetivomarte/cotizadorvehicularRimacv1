@@ -1,0 +1,112 @@
+@import "../../assets/scss/variables";
+@import "../../assets/scss/mixins";
+
+.accordion {
+  $square: 40px;
+  $gap-left: $spacing-xs * 4;
+  $action: 51px;
+  .item {
+    @include focus-reset;
+    border-bottom: 1px solid $gray-light-3;
+    padding: ($spacing-xs * 6) 0;
+    > header {
+      display: flex;
+      justify-content: space-between;
+      padding-bottom: $spacing-xs * 2;
+
+      .icon {
+        background-repeat: no-repeat;
+        background-position: center;
+        width: $square;
+        height: $square;
+      }
+      .name {
+        width: calc(100% - (#{$square} + #{$action}));
+        font-size: 16px;
+        line-height: 24px;
+        @media (min-width: $breakpoint-desktop) {
+          font-size: 20px;
+        }
+      }
+      .aside {
+        width: $action;
+        .openAction { 
+          display: none;
+          @media (min-width: $breakpoint-desktop) {
+            display: block;
+            position: relative;
+            &:before {
+              position: absolute;
+              content: '';
+              background-image: url(../../assets/images/chevrot_down.svg);
+              background-repeat: no-repeat;
+              background-position: center;
+              width: $action;
+              height: 30px;
+            }
+          }        
+        }
+        .switch { 
+          @media (min-width: $breakpoint-desktop) { display: none }
+        }
+      }
+    }
+
+    > main {
+      padding-left: $square + $gap-left;
+      font-size: 14px;
+      line-height: 24px;
+      color: $gray-2;
+      > article.content { 
+        display: none;
+        margin: ($spacing-xs * 3) 0;
+      }
+      > .mainAction {
+        display: none;
+        @media (min-width: $breakpoint-desktop) { 
+          display: block;
+        }
+        > button {
+          @media (min-width: $breakpoint-desktop) { 
+            $icon: 24px;
+            padding-left: $icon +10px;
+            position: relative;
+            &:before {
+              position: absolute;
+              left: 0;
+              top: - $icon / 4;
+              font-size: 16px;
+              width: $icon;
+              height: $icon;
+              line-height: 22px;
+              border: 1px solid $link;
+              border-radius: 50%;
+            }
+            &.add::before { content: '+' }
+            &.remove::before { content: '-' }
+          }
+        }
+      }
+      > button.viewButton {
+        @media (min-width: $breakpoint-desktop) { display: none }
+      }
+    }
+
+    &.active {
+      > header {
+        &:before { transform: rotate(-180deg) }
+        .openAction {
+          @media (min-width: $breakpoint-desktop) {
+            &:before {
+              transform: rotate(180deg);
+            }
+          }
+        }
+      }
+      > main { 
+        > article.content { display: block }
+        button.viewButton { color: $gray-light-2 }
+      }
+    }
+  }
+}

@@ -1,0 +1,84 @@
+@import '../../assets/scss/variables';
+
+.summary {
+  @media (max-width: $breakpoint-mobile) {
+    background-color: white;
+    padding: ($spacing-xs * 4) $gap;
+    box-shadow: 0 4px 6px 12px rgba($gray-light-2, 0.1);
+    display: flex;
+    justify-content: space-between;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+  }
+  > header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    .price {
+      font-size: 24px;
+      font-weight: $font-weight-base;
+      font-family: $secondary-family;
+      @media (min-width: $breakpoint-desktop) {
+        font-size: 28px;
+      }
+    }
+    > div > p { 
+        font-size: 10px; 
+        text-transform: uppercase;
+        @media (min-width: $breakpoint-desktop) {
+          font-size: 12px;
+          text-transform: initial; 
+        }
+      }
+    > img {
+      display: none;
+      @media (min-width: $breakpoint-desktop) {
+        display: block;
+        height: auto;
+        width: 64px;
+      }
+    }
+  }
+  > main {
+    display: none;
+    @media (min-width: $breakpoint-desktop) {
+      display: block;
+      border-top: 1px solid $gray-light-3;
+      padding-top: $spacing-xs * 6;
+      margin-top: $spacing-xs * 4;
+      margin-bottom: $spacing-xs * 10;
+      > p { 
+        font-size: 16px;
+        font-family: $secondary-family;
+        margin-bottom: $spacing-xs * 4;
+      }
+      > ul {
+        list-style-type: none;
+        li {
+          position: relative;
+          padding-left: 20px;
+          margin-bottom: 10px;
+          font-size: 14px;
+          color: $gray-2;
+          &::before {
+            content: '';
+            position: absolute;
+            top: 6px;
+            left: 0;
+            background-image: url(../../assets/images/icon_check_success.svg);
+            background-repeat: no-repeat;
+            width: 10px;
+            height: 8px;
+          }
+        }
+      }
+    }
+  }
+  > footer {
+    @media (max-width: $breakpoint-mobile) {
+      width: 60%;
+    }
+  }
+}

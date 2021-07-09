@@ -1,0 +1,23 @@
+.form-input_field {
+  section {
+    height: $input-field-height;
+    position: relative;
+  }
+  input.form-input {
+    @include form-input--box
+  }
+  label { @include label--box }
+  &.has-focus {
+    label {
+      transform: scale(0.75) translateY(-18px)
+    }
+    input.form-input {
+      padding-top: 16px;
+    }
+  }
+  &.has-error {
+    input.form-input {
+      border-color: $error;
+    }
+  }
+}

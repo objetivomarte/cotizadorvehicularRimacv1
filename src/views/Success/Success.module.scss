@@ -1,0 +1,15 @@
+@import '../../assets/scss/variables';
+
+.success {
+  @media (min-width: $breakpoint-desktop) {
+    padding-top: $spacing-xs * 10;
+  }
+  article h2 {
+    letter-spacing: -0.6px;
+    line-height: 36px;
+    @media (min-width: $breakpoint-desktop) {
+      letter-spacing: -0.2px;
+      line-height: 48px;
+    }
+  }
+}

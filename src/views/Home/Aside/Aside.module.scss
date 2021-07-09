@@ -1,0 +1,46 @@
+@import "../../../assets/scss/variables";
+
+.aside {
+  padding: 96px $gap 56px;
+  position: relative;
+  @media (min-width: $breakpoint-desktop) {
+    background-color: #ecf0ff;
+    height: 100vh;
+    background-image: url(../../../assets/images/city_bg.svg);
+    background-size: 100%;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: flex-end;
+    padding-right: 0;
+  }
+  &:before {
+    content: "";
+    background-image: url(../../../assets/images/client_female.svg);
+    background-repeat: no-repeat;
+    background-position: right bottom;
+    position: absolute;
+    top: 0;
+    bottom: -24px;
+    left: 0;
+    right: 0;
+    @media (min-width: $breakpoint-desktop) {
+      display: none;
+    }
+  }
+  .container {
+    @media (min-width: $breakpoint-desktop) {
+      margin-right: $gap * 3;
+      max-width: 290px;
+      br { display: none !important}
+    }
+    img.media {
+      display: none;
+      @media (min-width: $breakpoint-desktop) {
+        display: block;
+        margin-right: $gap * 2;
+        margin-bottom: $spacing-xs * 6;
+        max-width: 320px;
+      }
+    }
+  }
+}
